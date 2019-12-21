@@ -1,0 +1,10 @@
+[submodule "baobab-client"]
+	path = services/baobab-client
+	url = https://github.com/Baobab-team/baobab-client.git
+	branch = master
+
+
+[submodule "baobab-api"]
+	path = services/baobab-client
+	url = https://github.com/Baobab-team/baobab-api.git
+	branch = master
