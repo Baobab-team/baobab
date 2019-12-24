@@ -1,5 +1,8 @@
 # Baobab
 
+### Clone repository
+
+`git clone --recursive [URL to Git repo]`
 
 ### Preriquisites
 * [PostgreSQL](https://www.postgresql.org)
