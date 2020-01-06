@@ -22,13 +22,12 @@ services:
       - POSTGRES_DB=db_dev
 
   frontend:
-    hostname: localhost
-    container_name: angular-container
     build: ./baobab-client
+    command: npm start
     ports:
-      - 80:80
+      - 4200:4200
     volumes:
-      - "/app/non_meodules"
-      - ":/app"
+      - "/app/node_modules"
+      - "./baobab-client:/app"
 volumes:
   postgres_data:
