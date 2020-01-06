@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  api:
+  backend:
     build: ./baobab-api
     command: python manage.py run -h 0.0.0.0
     volumes:
@@ -21,5 +21,13 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=db_dev
 
+  frontend:
+    build: ./baobab-client
+    command: npm start
+    ports:
+      - 4200:4200
+    volumes:
+      - "/app/node_modules"
+      - "./baobab-client:/app"
 volumes:
   postgres_data:
