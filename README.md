@@ -28,4 +28,4 @@ docker-compose down -v
 ```
 
 
-Once done, head to http://localhost:5000/
+Once done, head to http://localhost:4200/
