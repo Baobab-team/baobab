@@ -13,9 +13,6 @@
 ### Setup 
 
 ```
-# Setup environment variables
-mv .env.sample .env 
-
 # Build the image
 docker-compose up -d --build
 
