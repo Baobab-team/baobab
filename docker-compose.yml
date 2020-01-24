@@ -25,7 +25,7 @@ services:
     build: ./baobab-client
     command: npm start
     ports:
-      - 4200:4200
+      - 14200:4200
     volumes:
       - "/app/node_modules"
       - "./baobab-client:/app"
