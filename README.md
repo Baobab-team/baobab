@@ -27,5 +27,8 @@ docker-compose down -v
 
 ```
 
-
-Once done, head to http://localhost:4200/
+Update submodule
+```
+git submodule update
+```
+Once done, head to http://localhost:4200  or http://localhost:5000/api_v1/businesses
