@@ -13,11 +13,23 @@
 ### Setup 
 
 ```
+# Move to api directory
+cd baoabab-api 
+
+# Copy file
+mv .env.local .env 
+
 # Build the image
 docker-compose up -d --build
 
-# Create the database
-docker-compose exec backend python manage.py create_db
+# Create the database (1st time only)
+docker-compose exec backend python manage.py db init
+
+# GENERATE migrations
+docker-compose exec backend python manage.py db migrate
+
+# RUN migrations
+docker-compose exec backend python manage.py db upgrade
 
 # Seed database
 docker-compose exec backend python manage.py seed_db 
