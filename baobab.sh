@@ -2,13 +2,19 @@
 
 ACTION=$1
 BASH_PROFILE=~/.bash_profile
+ORANGE='\033[0;33m'
+NOCOLOR='\033[0m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+WHITE='\033[1;37m'
 
 # Functions
 show_menu() {
   clear
-  echo "--------------------"
-  echo "BAOBAB SCRIPT MENU"
-  echo "--------------------"
+  echo -e "${ORANGE}
+  --------------------
+  BAOBAB SCRIPT MENU
+  --------------------${NOCOLOR}"
   echo "
   Use one of the following command
   1) create_db    - Create database
@@ -18,11 +24,11 @@ show_menu() {
   5) create_user  - Create user
   3) delete_user  - Delete user
   3) env_setup  - Setup environment
-    "
+  "
 }
 
 delete_db() {
-  echo "Deleting database"
+  echo "Deleting database..."
   dropdb -U ${BAOBAB_USER} -i -e ${BAOBAB_DATABASE}
 }
 
@@ -42,7 +48,7 @@ create_db() {
 }
 
 back_db() {
-  echo "Dumping database"
+  echo "Dumping database..."
   pg_dump ${BAOBAB_DATABASE}  > baobabdb_backup.sql
 }
 
