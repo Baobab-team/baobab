@@ -30,6 +30,8 @@ show_menu() {
 delete_db() {
   echo "Deleting database..."
   dropdb -U ${BAOBAB_USER} -i -e ${BAOBAB_DATABASE}
+  echo "Deleting migrations folder.."
+  rm -rf baobab-api/migrations
 }
 
 create_user() {
